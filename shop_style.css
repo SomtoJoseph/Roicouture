@@ -1,0 +1,319 @@
+:root{
+    --text-light:#64748b;
+    --back:#414141;
+    --white:#ffff;
+    --text-dark:#0f172a;
+    --max-width: 1180px;
+    --primary-colour: teal;
+}
+
+*{
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    height: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--back);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--primary-colour);
+}
+
+p{
+    font-size: 1.3rem;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+button{
+    background-color: var(--primary-colour);
+    color: var(--white);
+    font-size: 17px;
+    height: 40px;
+    width: 180px;
+    cursor: pointer;
+    transition: .2s;
+    border-radius: 50px;
+    border: none;
+}
+
+button:hover{
+    opacity: .8;
+    letter-spacing: 2px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    align-items: center;
+    width: 100%;
+    background-color: var(--back);
+    position: fixed;
+    z-index: 1;
+}
+
+nav .logo{
+    font-size: 1.5rem;
+    font-weight: 1000;
+    font-style: italic;
+    color: var(--white);
+}
+
+nav .navbar{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .navbar.active{
+    display: flex;
+}
+
+.navbar-toggle{
+    border: none;
+    background: transparent;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+}
+
+nav li{
+    list-style: none;
+    position: relative;
+    margin: 0 10px;
+    padding: 0 2px;
+}   
+
+nav li a{
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--white);
+}
+
+nav li a:before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    width: 100%;
+    background: teal;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform 0.2s linear;
+}
+
+nav li a:hover:before{
+    transform: scaleX(1);
+}
+
+nav .navbar .active{
+    color: var(--primary-colour);
+}
+
+.title{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Roi-shop/Work1.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 40vh;
+}
+
+.title h1{
+    top: 25%;
+    transform: translateY(50%);
+    color: var(--white);
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 3rem;
+    font-style: italic;
+}
+
+.shop{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 2rem 2rem;
+}
+
+.shop-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.shop-card{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.shop-card img{
+    width: 100%;
+    transition: .3s;
+}
+
+.shop-card img:hover{
+    scale: 1.1;
+}
+
+.shop span{
+    color: var(--white);
+    position: absolute;
+    font-size: 0.9rem;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--white);
+    border-radius: 5px;
+}
+
+footer{
+    margin: auto;
+    max-width: var(--max-width);
+    padding: 9rem 1rem;
+}
+
+footer .footer-con{
+   display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8rem;
+}
+
+footer .footer-con .footer_col img{
+    width: 50%;
+}
+
+footer .footer-con .footer_col p, h3{
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+footer .footer-con .footer_col a{
+    color: black;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+footer .footer-con .footer_col a:hover{
+    color: var(--primary-colour);
+}
+
+footer p{
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+
+@media (width < 900px){
+    p{
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    h1{
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+    }
+
+    h2{
+        font-size: 1.2rem;
+    }
+
+    nav li a{
+        font-size: 19px;
+    }
+}
+
+@media (width < 600px){
+
+    header nav{
+        padding: 1rem;
+
+    }
+
+    header .navbar{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 100%;
+        right: 0;
+        padding: 5rem 1.5rem;
+        background-image: linear-gradient(rgba(48, 48, 48, 0.75),rgba(18, 18, 18, 0.75)),url(Roi-shop/Work1.jpg);
+        background-position: center;
+    }
+
+    header .navbar a{
+        display: block;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+        padding-left: 9rem;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .title{
+        height: 33vh;
+    }
+
+    .title h1{
+        top: 10%;
+        font-size: 3.7rem;
+    }
+
+    .shop-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    footer .footer-con{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2.4rem;
+    }
+
+    footer .footer-con .footer_col a , h3{
+        margin-bottom: 0.3rem;
+    }
+
+    footer .footer-con .footer_col p{
+        margin-bottom: 0.3rem;
+    }
+}
